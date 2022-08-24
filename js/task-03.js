@@ -38,15 +38,25 @@ const images = [
 // list-item.style.margin = "20px";
 // images.style.margin = "20px";
 
-for (const image of images) {
-  const galleryEl = document.querySelector(".gallery");
-  galleryEl.style.display = "flex";
-  galleryEl.insertAdjacentHTML(
-    "afterbegin",
-    `<li style>
-     <img src="${image.url}" alt="${image.alt}" >
-     <style = "20px">
-    </li>`
-  );
-}
+// for (const image of images) {
+//   const galleryEl = document.querySelector(".gallery");
+//   galleryEl.style.display = "flex";
+//   galleryEl.insertAdjacentHTML(
+//     "afterbegin",
+//     `<li style>
+//      <img src="${image.url}" alt="${image.alt}" >
+//      <style = "20px">
+//     </li>`
+//   );
+// }
 
+const galleryEl = document.querySelector(".gallery");
+for (let el of images)
+  document.querySelector(".gallery").insertAdjacentHTML(
+    "beforeEnd",
+    `<li><img src="${el.url}" alt="${el.alt}"></li>
+      galleryEl.style.display = "flex";`
+  );
+
+galleryEl.style.cssText =
+  "display:flex; alignItems: center; justifyContent: space-between; width:15px;";
