@@ -69,5 +69,5 @@ const decrement = () => {
 
   document.getElementById("value").textContent = counterValue;
 };
-clickRigthBtton.addEventListener("click", decrement);
-clickLeftBtton.addEventListener("click", increment);
+clickRigthBtton.addEventListener("click", increment);
+clickLeftBtton.addEventListener("click", decrement);

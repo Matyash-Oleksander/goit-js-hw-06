@@ -51,12 +51,24 @@ const images = [
 // }
 
 const galleryEl = document.querySelector(".gallery");
-for (let el of images)
-  document.querySelector(".gallery").insertAdjacentHTML(
-    "beforeEnd",
-    `<li><img src="${el.url}" alt="${el.alt}"></li>
-      galleryEl.style.display = "flex";`
-  );
+const el = images.map(
+  (image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`
+);
+
+galleryEl.insertAdjacentHTML("beforeEnd", el);
 
 galleryEl.style.cssText =
   "display:flex; alignItems: center; justifyContent: space-between; width:15px;";
+
+// el.style.cssText = "margin-left:10px";
+
+// const galleryEl = document.querySelector(".gallery");
+// for (let el of images)
+//   document.querySelector(".gallery").insertAdjacentHTML(
+//     "beforeEnd",
+//     `<li><img src="${el.url}" alt="${el.alt}"></li>
+//       galleryEl.style.display = "flex";`
+//   );
+
+// galleryEl.style.cssText =
+//   "display:flex; alignItems: center; justifyContent: space-between; width:15px;";
