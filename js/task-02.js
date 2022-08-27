@@ -7,28 +7,33 @@ const ingredients = [
   "Condiments",
 ];
 
-// const ingredientEl = document.querySelector("#ingredients");
-// console.log(ingredientEl);
-// варіант 1----
-// const el = [];
-// for (let i = 0; i < ingredients.length; i += 1) {
-//   // const li = document.createElement("li");
-//   const li = document.createElement("li");
-
-//   li.textContent = ingredients[i];
-//   li.classList.add("item");
-//   el.push(li);
-// // }
-// ingredientEl.append(...el);
-
 const ingredientEl = document.querySelector("#ingredients");
-ingredients.map((ingredient) => {
+console.log(ingredientEl);
+// варіант 1----
+const el = [];
+for (let i = 0; i < ingredients.length; i += 1) {
+  // const li = document.createElement("li");
   const li = document.createElement("li");
-  li.textContent = ingredient;
+
+  li.textContent = ingredients[i];
   li.classList.add("item");
-  console.log(li);
-  ingredientEl.after(li);
-});
+  el.push(li);
+}
+ingredientEl.append(...el);
+
+// const ingredientEl = document.querySelector("#ingredients");
+// const el = ingredients.map((ingredient) => {
+//   const li = document.createElement("li");
+//   li.textContent = ingredient;
+//   li.classList.add("item");
+//   console.log(li);
+// });
+// ingredientEl.append(el);
+
+// ingredientEl.appendChild(el);
+// ingredientEl.innerHTML = el;
+
+// ingredientEl.after(li);
 
 // ingredientEl.after(el);
 
@@ -37,7 +42,7 @@ ingredients.map((ingredient) => {
 //   // console.log(li);
 //   li.textContent = ingredient;
 //   li.classList.add("item");
-//   ingredientEl.appendChild(li);
+//
 // });
 
 // ---Варіант 3----

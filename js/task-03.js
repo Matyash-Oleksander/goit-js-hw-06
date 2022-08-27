@@ -13,6 +13,24 @@ const images = [
   },
 ];
 
+const galleryEl = document.querySelector(".gallery");
+// const el = images.map(
+//   (image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`
+// );
+
+// galleryEl.insertAdjacentHTML("beforeEnd", el);
+
+// galleryEl.style.cssText =
+//   "display:flex; alignItems: center; justifyContent: space-between; width:15px;";
+
+const listGallery = (image) => {
+  return `<li><img src="${image.url}" alt="${image.alt}"></li>`;
+};
+galleryEl.style.cssText =
+  "display:flex; alignItems: center; justifyContent: space-between; width:15px;";
+const markup = images.map(listGallery).join("");
+galleryEl.insertAdjacentHTML("beforeEnd", markup);
+
 // const imageEl = document.querySelector(".gallery");
 // // const newTechnologies = ["React", "TypeScript", "Node.js"];
 // // const markup = [...images]
@@ -49,16 +67,6 @@ const images = [
 //     </li>`
 //   );
 // }
-
-const galleryEl = document.querySelector(".gallery");
-const el = images.map(
-  (image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`
-);
-
-galleryEl.insertAdjacentHTML("beforeEnd", el);
-
-galleryEl.style.cssText =
-  "display:flex; alignItems: center; justifyContent: space-between; width:15px;";
 
 // el.style.cssText = "margin-left:10px";
 
